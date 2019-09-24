@@ -56,6 +56,9 @@
                   Log out
                 </p>
               </a>
+
+
+
               <li class="nav-link">
                 <a href="#" class="nav-item dropdown-item">Profile</a>
               </li>
@@ -66,6 +69,13 @@
               <li class="nav-link">
                 <a href="#" class="nav-item dropdown-item">Log out</a>
               </li>
+             <div class="btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active" id="toogle-mode">
+    <input type="checkbox" checked autocomplete="off" v-on:click="toogleDarkMode"> Change Mode
+  </label>
+</div>
+
+
             </base-dropdown>
           </ul>
         </div>
@@ -100,6 +110,9 @@
       };
     },
     methods: {
+      toogleDarkMode(event){
+        document.body.classList.toggle('white-content');
+      },
       capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
       },
